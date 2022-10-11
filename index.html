@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/fontawesome-free-6/css/all.min.css">
+  
+  <title>Frontend Mentor | Notifications page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div>
+      <span class="noti">Notifications</span>
+      <span class="notiCount"></span>
+      <span class="allRead"> Mark all as read</span>
+    </div>
+
+    <div class="card">
+      <div class="component">
+        <div class="image">
+          <img src="assets/images/avatar-mark-webber.webp" alt="">
+        </div>
+        <div class="text"> 
+          <span class="name">Mark Webber</span> reacted to your recent post My first tournament today! <i class="fas fa-bell"></i>
+          <div class="time">1m ago</div>
+          <div class="message">
+            Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+            I'm already having lots of fun and improving my game.
+          </div>
+        </div>
+      </div>
+
+      <div class="component">
+        <div class="image">
+          <img src="assets/images/avatar-angela-gray.webp" alt="">
+        </div>
+        <div class="text"> 
+          <span class="name">Angela Gray</span> followed you. <i class="fas fa-bell"></i>
+          <div class="time">5m ago</div>
+          <div class="message">
+            Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+            I'm already having lots of fun and improving my game.
+          </div>
+        </div>
+      </div>
+
+      <div class="component">
+        <div class="image">
+          <img src="assets/images/avatar-jacob-thompson.webp" alt="">
+        </div>
+        <div class="text"> 
+          <span class="name">Jacob Thompson</span> has joined your group Chess Club. <i class="fas fa-bell"></i>
+          <div class="time"> 1 day ago</div>
+          <div class="message">
+            Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+            I'm already having lots of fun and improving my game.
+          </div>
+        </div>
+      </div>
+
+      <div class="component">
+        <div class="image">
+          <img src="assets/images/avatar-rizky-hasanuddin.webp" alt="">
+        </div>
+        <div class="text"> 
+          <span class="name">Rizky Hasanuddin </span> sent you a private message. <i class="fas fa-bell"></i>
+          <div class="time">5 days ago</div>
+          <div class="message">
+            Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+            I'm already having lots of fun and improving my game.
+          </div>
+        </div>
+      </div>
+
+      <div class="component">
+        <div class="image">
+          <img src="assets/images/avatar-kimberly-smith.webp" alt="">
+        </div>
+        <div class="text"> 
+          <span class="name">Kimberly Smith</span> commented on your picture. <i class="fas fa-bell"></i>
+          <div class="time">1 week ago</div>
+          <div class="message">
+            Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+            I'm already having lots of fun and improving my game.
+          </div>
+        </div>
+      </div>
+
+      <div class="component">
+        <div class="image">
+          <img src="assets/images/avatar-nathan-peterson.webp" alt="">
+        </div>
+        <div class="text"> 
+          <span class="name">Nathan Peterson</span> reacted to your recent post 5 end-game strategies to increase your win rate. <i class="fas fa-bell"></i>
+          <div class="time"> 2 weeks ago</div>
+          <div class="message">
+            Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+            I'm already having lots of fun and improving my game.
+          </div>
+        </div>
+      </div>
+
+      <div class="component">
+        <div class="image">
+          <img src="assets/images/avatar-anna-kim.webp" alt="">
+        </div>
+        <div class="text"> 
+          <span  class="name"> Anna Kim</span> left the group Chess Club. <i class="fas fa-bell"></i>
+          <div class="time">2 weeks ago</div>
+          <div class="message">
+            Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+            I'm already having lots of fun and improving my game.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script> 
+
+    var components = document.querySelectorAll(".component");
+    var icons = document.querySelectorAll(".fas");
+    document.querySelector(".notiCount").innerHTML = components.length;
+    var i = components.length;
+
+    components.forEach(component => {
+      component.addEventListener("click", () => {
+        component.classList.add("active");
+        component.style.backgroundColor = "white";
+        i -= 1;
+        document.querySelector(".notiCount").innerHTML = `${i}`;
+      });
+    });
+
+    document.querySelector(".allRead").onclick = () => {
+      document.querySelector(".notiCount").innerHTML = components.length - components.length;
+      components.forEach(component => {
+        component.style.backgroundColor = "white";
+      })
+      icons.forEach(icon => {
+        icon.style.display = "none";
+      })
+      };
+
+  </script>
+</body>
+</html>

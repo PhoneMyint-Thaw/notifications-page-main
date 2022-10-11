@@ -1,0 +1,86 @@
+body{
+    background-color: hsl(210, 60%, 98%);
+    font-family: medium;
+}
+@font-face {
+    font-family: medium;
+    src: url(assets/fonts/static/PlusJakartaSans-Medium.ttf);
+}
+@font-face {
+    font-family: bold;
+    src: url(assets/fonts/static/PlusJakartaSans-ExtraBold.ttf);
+}
+.container{
+    background-color: hsl(0, 0%, 100%);
+    width: 50%;
+    margin: auto;
+    padding: 50px;
+    border-radius: 10px;
+}
+span.noti{
+    font-family: bold;
+    padding-right: 10px;
+    font-size: x-large;
+}
+span.notiCount{
+    padding:  0 10px;
+    background-color: hsl(224, 21%, 14%);
+    color: white;
+    border-radius: 10px;
+}
+span.allRead {
+    float: right;
+    cursor: pointer;
+}
+.component {
+    background-color: hsl(211, 68%, 94%);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    display: flex;
+    cursor: pointer;
+}
+.image img{
+    width: 50px;
+}
+div.text {
+    align-self: center;
+    padding: 0 20px;
+}
+.name{
+    font-family: bold;
+    color: black;
+}
+.time {
+    color: gray;
+}
+div.message {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    display: none;
+    background-color: hsl(205, 33%, 90%);
+}
+.text i {
+    color: red;
+}
+.component.active .message{
+    display: block;
+}
+.component.active .text i{
+    display: none;
+}
+@media (max-width: 375px) {
+    .container{
+        width: 90%;
+        padding: 0;
+        margin: 20px auto;
+    }
+    span.noti {
+        font-size: medium;
+        padding-right: 0;
+    }
+    .component{
+        padding: 10px;
+    }
+}
